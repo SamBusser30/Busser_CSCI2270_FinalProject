@@ -81,6 +81,27 @@ int main()
 		Sam.draftBoard();
 		bool draftReady = false;
 		string draftChoice;
+
+
+    string reassignChoice;
+    bool reassign = false;
+    while (reassign == false)
+    {
+        cout << "Would you like to reassign picks or continue?" << endl;
+        cout << "1. Continue with the draft" << endl << "2. Reassign" << endl;
+        getline(cin, reassignChoice);
+        if(reassignChoice == "2")
+        {
+            Sam.determineOrder();
+            Sam.yourPickIs(chosenTeam);
+        }
+        else
+        {
+            reassign = true;
+            break;
+        }
+    }
+
 		while (draftReady == false){
 			cout<<endl;
 			cout<<endl;
